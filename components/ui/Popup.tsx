@@ -56,7 +56,6 @@ export interface Banner {
   /** @description Image's alt text */
   alt: string;
   /** @description Popup de entrada ou saida */
-  popup: "in" | "out";
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
@@ -69,13 +68,14 @@ export interface Props {
   banner?: Banner;
   layout?: {
     position?: "Left" | "Center" | "Right";
+    popup: "in" | "out";
   };
 }
 
 const DEFAULT_PROPS = {
-  popup: "in",
   layout: {
     position: "Right",
+    popup: "in",
   },
   banner: {
     alt: "popup promo",
@@ -90,7 +90,7 @@ const DEFAULT_PROPS = {
 
 function Popup(props: Props) {
   const id = useId();
-  const { layout, banner, popup } = {
+  const { layout, banner } = {
     ...DEFAULT_PROPS,
     ...props,
   };
@@ -99,7 +99,7 @@ function Popup(props: Props) {
     <>
       <div
         id={id}
-        data-type={popup}
+        data-type={layout.popup}
         class={`
           transform-gpu translate-y-[200%] bg-black bg-opacity-75 transition fixed bottom-0 lg:bottom-2 w-screen z-50 lg:flex
           ${layout?.position === "Left" ? "lg:justify-start" : ""}
