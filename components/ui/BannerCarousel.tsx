@@ -1,10 +1,10 @@
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
-import { useId } from "$store/sdk/useId.ts";
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Button from '$store/components/ui/Button.tsx';
+import Icon from '$store/components/ui/Icon.tsx';
+import Slider from '$store/components/ui/Slider.tsx';
+import SliderJS from '$store/islands/SliderJS.tsx';
+import { useId } from '$store/sdk/useId.ts';
+import type { ImageWidget } from 'apps/admin/widgets.ts';
+import { Picture, Source } from 'apps/website/components/Picture.tsx';
 
 /**
  * @titleBy alt
@@ -44,43 +44,43 @@ export interface Props {
 const DEFAULT_PROPS = {
   images: [
     {
-      alt: "/feminino",
+      alt: '/feminino',
       action: {
-        href: "https://www.deco.cx/",
-        label: "deco.cx",
-        title: "Demo Store",
-        subTitle: "Visit our site and start building now:",
+        href: 'https://www.deco.cx/',
+        label: 'deco.cx',
+        title: 'Demo Store',
+        subTitle: 'Visit our site and start building now:',
       },
       mobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/24278f9e-412d-4a8a-b2d3-57353bb1b368",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/24278f9e-412d-4a8a-b2d3-57353bb1b368',
       desktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/afa2c07c-74f4-496d-8647-5cc58f48117b",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/afa2c07c-74f4-496d-8647-5cc58f48117b',
     },
     {
-      alt: "/feminino",
+      alt: '/feminino',
       action: {
-        href: "https://www.deco.cx/",
-        label: "deco.cx",
-        title: "Demo Store",
-        subTitle: "Visit our site and start building now:",
+        href: 'https://www.deco.cx/',
+        label: 'deco.cx',
+        title: 'Demo Store',
+        subTitle: 'Visit our site and start building now:',
       },
       mobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/eeaa624c-a3e1-45e8-a6fe-034233cfbcd0",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/eeaa624c-a3e1-45e8-a6fe-034233cfbcd0',
       desktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7949d031-9a79-4639-b85e-62fd90af85a9",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7949d031-9a79-4639-b85e-62fd90af85a9',
     },
     {
-      alt: "/feminino",
+      alt: '/feminino',
       action: {
-        href: "https://www.deco.cx/",
-        label: "deco.cx",
-        title: "Demo Store",
-        subTitle: "Visit our site and start building now:",
+        href: 'https://www.deco.cx/',
+        label: 'deco.cx',
+        title: 'Demo Store',
+        subTitle: 'Visit our site and start building now:',
       },
       mobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ae89571c-4a7c-44bf-9aeb-a341fd049d19",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ae89571c-4a7c-44bf-9aeb-a341fd049d19',
       desktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7ec121e4-5cfe-4b7b-b942-d1ed4493803d",
+        'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7ec121e4-5cfe-4b7b-b942-d1ed4493803d',
     },
   ],
   preload: true,
@@ -91,28 +91,28 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
   return (
     <a
-      href={action?.href ?? "#"}
+      href={action?.href ?? '#'}
       aria-label={action?.label}
       class="relative h-[500px] overflow-y-hidden w-full"
     >
       <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
+          fetchPriority={lcp ? 'high' : 'auto'}
           src={mobile}
           width={360}
           height={600}
         />
         <Source
           media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
+          fetchPriority={lcp ? 'high' : 'auto'}
           src={desktop}
           width={1440}
           height={500}
         />
         <img
           class="object-cover w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
+          loading={lcp ? 'eager' : 'lazy'}
           src={desktop}
           alt={alt}
         />
