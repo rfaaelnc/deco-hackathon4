@@ -105,7 +105,7 @@ function Popup(props: Props) {
           ${layout?.position === "Left" ? "lg:justify-start" : ""}
           ${
             layout?.position === "Center"
-              ? "flex justify-center items-center top-0"
+              ? "flex justify-center items-center top-0 h-screen"
               : ""
           }
           ${layout?.position === "Right" ? "lg:justify-end" : ""}
